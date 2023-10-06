@@ -1,13 +1,137 @@
+*{
+    font-family: 'Indie Flower', cursive;
+}
+
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    margin: 20px 50px;
+    padding: 3px;
+    background-color: #f0f0f0;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+/* Global styles */
+.outer-div {
+    width: 100%;
+    max-width: 500px;
+    margin: 10px auto;
+    padding: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Task div */
+.task {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    background-color: #bae8e8;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid blue;
+}
+
+/* Task item */
+.taskItem {
+    padding: 5px;
+    font-size: 1rem;
+    flex: 1;
+}
+
+/* Remove button */
+.btn {
+    background-color: #1840c5;
+    color: white;
+    padding: 0.2rem 1rem;
+    cursor: pointer;
+    border-radius: 10px;
+    border: none;
+    box-shadow: none;
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+    width: auto;
+    margin-left: 10px;
+}
+
+/* Hover state */
+.btn:hover {
+    background-color: white;
+    color: #0b2baf;
+    font-weight: bold;
+    transform: scale(1.02);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border: 1px solid black;
+}
+
+/* Active state */
+.btn:active {
+    transform: scale(0.95);
+}
+
+.heading {
+    text-align: center;
+}
+
+#removeAllDiv {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+#removeAllDiv button {
+    margin-left: 20px;
+}
+
+.outer-div.taskInput {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.outer-div.taskInput button {
+    margin-left: 20px;
+}
+
+.styled-input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 16px;
+    border-image-source: linear-gradient(to right, #3498db, #2ecc71);
+    border-image-slice: 1;
+    transition: border-image-source 0.3s ease-in-out, box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+/* Animation when input field is focused */
+.styled-input:focus {
+    border-image-source: linear-gradient(to right, #e74c3c, #f1c40f);
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+    animation-play-state: paused;
+}
+
+/* Placeholder styling */
+.styled-input::placeholder {
+    color: #777;
+}
+
+/* Hover effect */
+.styled-input:hover {
+    border-image-source: linear-gradient(to right, #9b59b6, #8e44ad);
+}
+
+/* Define the pulse animation */
+@keyframes pulse {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.05);
+    }
+}
+
+#removeOneBtn{
+    height: 30px;
+    margin: auto;
 }
