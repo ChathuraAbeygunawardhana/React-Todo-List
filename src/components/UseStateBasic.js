@@ -12,9 +12,9 @@ const UseStateBasic = () => {
         setActivities([]);
     }
 
-    function submitTask() {
+    function submitTask(id) {
         let inputTask = document.getElementById("taskInput").value;
-        activities.push({id: 4, name: inputTask});
+        activities.push({id: (id+1), name: inputTask});
         setActivities(activities.filter((activity) => activity.id !== -1));
         console.log(activities);
     }
@@ -46,7 +46,7 @@ const UseStateBasic = () => {
             </div>
             <div className="outer-div taskInput">
                 <input type="text" id={"taskInput"} className={"styled-input"}/>
-                <button className={"btn"} onClick={() => submitTask()}>Add Task</button>
+                <button className={"btn"} onClick={() => submitTask(activities.length)}>Add Task</button>
             </div>
         </>
     );
